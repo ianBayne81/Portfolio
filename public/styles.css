@@ -3,58 +3,88 @@
     padding: 0;
 }
 
-/* These listed settings are Global properties for all device sizes */
-
 body {
     background-image: url("./images/bubblebg.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover; 
 }
 
+/*also has properties set within phone device display far below*/
 #header-container {
     background-image: url("/images/headerbg.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 100% 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 350px;
     width: 100%;
 }
 
-#header {
+#heading-one {
+    margin-left: 10px;
     font-family: 'Libre Baskerville', serif;
     font-size: 30px;
     color:white;
-    padding: 10px;
-}
-
-/*#heading-one {
-
+     
 }
 
 #heading-two {
-
-}*/
+    margin-left: 60px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    color:white;
+}
 
 
 #menu-bar {
-    height: 200px;
-    width: 100%
-}
-
-#menu-bar:hover {
     background: rgb(4, 21, 22);
     opacity: .7;
+    height: 200px;
+    width: 100%;
 }
 
-/*#project-container-box {
-    
+#row {
+    position: relative;
+}
+#nav-items li {
+    display: inline-block;
+}
 
-}*/
+/* has phone display properties far below*/
+#nav-items li a {
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+/*has phone device display properties far below*/
+#nav-items li a:hover {
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+/*also has properties set within phone device display far below*/
+#resume {
+    left: 20%;
+    bottom: 50%;
+}
+
+#item2 {
+    left: 40%;
+    bottom: 50%;
+}
+
+#item3 {
+    left: 60%;
+    bottom: 50%;
+}
 
 #projectOne {
     grid-area: index-projectOne;
@@ -80,6 +110,7 @@ body {
     align-self: center;
 }
 
+/*also has properties set within phone device display far below*/
 .button { 
     display: flex;
     justify-content: center;
@@ -90,23 +121,24 @@ body {
     padding: 5px;
     text-decoration: none;
     outline: none;
-    font-size: 30px;
-    color: aqua;
+    font-size: 25px;
+    color: white;
     font-weight: 700;
     background: black;
     opacity: .9;
     border-radius: 10px;
-    border: solid 3pt white;
+    border: solid 3pt aquamarine;
     cursor: pointer;
     /* font opacity color: rgba(0, 0, 0, 0.5);*/
 }
 
+/*button one, two, three and four on hover also has properties set within phone device display far below*/
 #buttonOne:hover {
-    background-image: url("./images/hangman-button.jpg");
+    background-image: url("./images/volumecalc-button.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-    border: solid 3pt aquamarine;
+    border: solid 3pt white;
     color: transparent;
     opacity: 9;
     height: 265px;
@@ -126,8 +158,9 @@ body {
 }
 
 #buttonThree:hover {
-    background-image: url("./images/hangman-button.jpg");
-    background-repeat: no-repeat;
+    /*background-image: url("./images/hangman-button.jpg");
+    background-repeat: no-repeat;*/
+    background: blue;
     background-position: center;
     background-size: 100% 100%;
     border: solid 3pt aquamarine;
@@ -138,8 +171,9 @@ body {
 }
 
 #buttonFour:hover {
-    background-image: url("./images/hangman-button.jpg");
-    background-repeat: no-repeat;
+    /*background-image: url("./images/hangman-button.jpg");
+    background-repeat: no-repeat;*/
+    background: red;
     background-position: center;
     background-size: 100% 100%;
     border: solid 3pt aquamarine;
@@ -261,6 +295,36 @@ video {
 
 /* These setting are for phone display only */
 @media screen and (min-width: 0px) and (max-width: 540px) {
+    #header-container {
+        height: 200px;
+        width: 100%;
+    }
+    
+    #nav-items li a {
+        padding: 0;
+        font-size: 15px;
+        font-weight: 200;
+    }
+
+    #nav-items li a:hover {
+        font-size: 17px;
+    }
+
+    #resume {
+        left: 10%;
+        bottom: 50%;
+    }
+    
+    #item2 {
+        left: 40%;
+        bottom: 50%;
+    }
+    
+    #item3 {
+        left: 70%;
+        bottom: 50%;
+    }
+
     #project-container { 
         display: grid;
         grid-template-columns: 1fr, auto;
@@ -277,6 +341,7 @@ video {
     .button {
         height: 200px;
         width: 150px;
+        font-size: 20px;
     }
 
     #buttonOne:hover {
