@@ -24,6 +24,7 @@ body {
     width: 100%;
 }
 
+/* also has properties set for phone device display far below*/
 #heading-one {
     margin-left: 10px;
     font-family: 'Libre Baskerville', serif;
@@ -33,23 +34,32 @@ body {
 }
 
 #heading-two {
-    margin-left: 60px;
+    margin-left: 50px;
     font-family: 'Libre Baskerville', serif;
     font-size: 20px;
     color:white;
 }
 
-
 #menu-bar {
-    background: rgb(4, 21, 22);
-    opacity: .7;
-    height: 200px;
+    background: rgba(1, 126, 95, 0.2);
+    height: 170px;
     width: 100%;
 }
 
 #row {
     position: relative;
+    list-style: none;
+    text-align: center;
+    top: 15%;
+    height: 90px;
+    width: 100%;
+    margin: auto;
 }
+
+#row li {  
+   display: inline-block;
+}
+
 #nav-items li {
     display: inline-block;
 }
@@ -62,6 +72,7 @@ body {
     padding: 2px 2px;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
+    top: 50%
 }
 
 /*has phone device display properties far below*/
@@ -129,7 +140,6 @@ body {
     border-radius: 10px;
     border: solid 3pt aquamarine;
     cursor: pointer;
-    /* font opacity color: rgba(0, 0, 0, 0.5);*/
 }
 
 /*button one, two, three and four on hover also has properties set within phone device display far below*/
@@ -158,9 +168,8 @@ body {
 }
 
 #buttonThree:hover {
-    /*background-image: url("./images/hangman-button.jpg");
-    background-repeat: no-repeat;*/
-    background: blue;
+    background-image: url("./images/todolist-button.jpg");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     border: solid 3pt aquamarine;
@@ -171,9 +180,8 @@ body {
 }
 
 #buttonFour:hover {
-    /*background-image: url("./images/hangman-button.jpg");
-    background-repeat: no-repeat;*/
-    background: red;
+    background-image: url("./images/horserider-button.jpg");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     border: solid 3pt aquamarine;
@@ -184,68 +192,110 @@ body {
 }
 
 #about-me-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-me {
+    position: absolute;
     height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
 }
 
 video {
+    left: 50%;
     height: 100%;
     width: 100%;
     opacity: .2;
 }
 
+/* also has properties set within phone device display far below*/
+#about-me-container button {
+    text-align: center;
+    font-size: 45px;
+    padding: 10px;
+    background: transparent;
+    color: aquamarine;
+    border: 2px solid aquamarine;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    font-family: 'Cookie', cursive;
+    z-index: 10;
+}
+
+/* also has phone device display far below*/
+#about-me-container button:hover {
+    font-size: 55px;
+    border: 1px solid white;
+    color: white;
+}
+
 #footer {
     background: black;
-    opacity: .9;
-    height: 100%;
+    height: auto;
     width: 100%;
+    padding: 15px;
+    
 }
 
-#row {
-    position: relative;
-    list-style: none;
+#footer ul {
+    justify-content: center;
     text-align: center;
-    height: 200px;
-    width: 100%;
-    margin: auto;
 }
 
-#row li {  
-   display: inline-block;
+#footer ul li {
+    display: inline-block;
 }
 
 #gmail-logo {
     display: block;
-    position: absolute;
-    right: 50%;
     background-image: url("/images/gmaillogo.png");
     background-size: 100% 100%;
     cursor: pointer;
-    height:80px;
-    width:100px;
+    height:70px;
+    width:70px;
+    margin: 10px;
 }
 
 #gmail-logo:hover {
-    height: 90px;
-    width: 110px;
+    transform: scale(1.1);
 }
 
 #github-logo {
     display: block;
-    position: absolute;
-    margin-left: 20px;
     background-image: url("/images/githublogo.png");
     background-size: 100% 100%;
     cursor: pointer;
-    height:80px;
-    width:100px;
+    height:70px;
+    width:70px;
+    margin: 10px;
 }
 
 #github-logo:hover {
-    height: 90px;
-    width: 110px;
+    transform:scale(1.1);
 }
 
+#footer-text-row li {
+    font-size: 18px;
+    color: white;
+}   
+
+#gmail-text {
+    width: 70px;
+    margin: 10px;
+}
+
+#github-text {
+    width: 70px;
+    margin: 10px;
+}
 
 /* These following setting are for desktop display only */
 @media screen and (min-width: 801px) {
@@ -299,11 +349,19 @@ video {
         height: 200px;
         width: 100%;
     }
+
+    #heading-one {
+        font-size: 20px; 
+    }
+    
+    #heading-two {
+        font-size: 15px;
+    }
     
     #nav-items li a {
         padding: 0;
         font-size: 15px;
-        font-weight: 200;
+        font-weight: 300;
     }
 
     #nav-items li a:hover {
@@ -311,12 +369,12 @@ video {
     }
 
     #resume {
-        left: 10%;
+        left: 15%;
         bottom: 50%;
     }
     
     #item2 {
-        left: 40%;
+        left: 45%;
         bottom: 50%;
     }
     
@@ -362,6 +420,14 @@ video {
     #buttonFour:hover {
         height: 200px;
         width: 150px;
+    }
+    /* Javascript element button*/
+    #about-me-container button {
+        font-size: 25px;
+    }
+
+    #about-me-container button:hover {
+        font-size: 35px;
     }
 
 }
