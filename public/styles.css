@@ -22,83 +22,70 @@ body {
     background-position: center;
     background-size: 100% 100%; 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 350px;
     width: 100%;
 }
 
 /* also has properties set for phone device display far below*/
 #heading-one {
-    margin-left: 10px;
-    font-family: 'Libre Baskerville', serif;
+    align-items: center;
+    text-align: left;
+    margin-left: 100px;
+    font-family: 'Yeseva One', cursive;
     font-size: 30px;
     color:white;
-     
+    height: 100px;
 }
 
-#heading-two {
-    margin-left: 50px;
-    font-family: 'Libre Baskerville', serif;
+#heading-two {  
+    height: 50px;
+    align-items: center;
+    text-align: right;
+    margin-right: 200px;
+    text-align: end;
+    font-family: 'Yeseva One', cursive;
     font-size: 20px;
     color:white;
 }
 
 #menu-bar {
     background: rgba(1, 126, 95, 0.2);
-    height: 170px;
-    width: 100%;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    
 }
 
-#row {
-    position: relative;
-    list-style: none;
+#menu-bar ul {
+    justify-content: center;
     text-align: center;
-    top: 15%;
-    height: 90px;
-    width: 100%;
-    margin: auto;
 }
 
-#row li {  
-   display: inline-block;
-}
-
-#nav-items li {
+#menu-bar ul li {
     display: inline-block;
 }
 
-/* has phone display properties far below*/
-#nav-items li a {
-    position: absolute;
+/*menu-bar up li a also has properties for phone device display far below */
+#menu-bar ul li a {
+    display: block;
+    cursor: pointer;
+    margin: 10px;
     color: white;
     text-decoration: none;
-    padding: 2px 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
-    top: 50%
 }
 
-/*has phone device display properties far below*/
-#nav-items li a:hover {
+#menu-bar ul li a:hover {
+    color: aqua;
+    transform: scale(1.2);
     text-decoration: underline;
-    font-size: 25px;
-}
-
-/*also has properties set within phone device display far below*/
-#resume {
-    left: 20%;
-    bottom: 50%;
-}
-
-#item2 {
-    left: 40%;
-    bottom: 50%;
-}
-
-#item3 {
-    left: 60%;
-    bottom: 50%;
 }
 
 #projectOne {
@@ -229,7 +216,7 @@ video {
     cursor: pointer;
     background: transparent;
     color: aquamarine;
-    border: 2px solid aquamarine;
+    border: 2px solid aqua;
     border-radius: 10px;
     height: auto;
     width: auto;
@@ -428,36 +415,26 @@ span {
     }
 
     #heading-one {
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
         font-size: 20px; 
     }
     
     #heading-two {
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
         font-size: 15px;
     }
-    
-    #nav-items li a {
-        padding: 0;
-        font-size: 15px;
-        font-weight: 300;
-    }
 
-    #nav-items li a:hover {
-        font-size: 17px;
-    }
-
-    #resume {
-        left: 15%;
-        bottom: 50%;
-    }
-    
-    #item2 {
-        left: 45%;
-        bottom: 50%;
-    }
-    
-    #item3 {
-        left: 70%;
-        bottom: 50%;
+    #menu-bar ul li a {
+        font-size: 10px;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .button {
