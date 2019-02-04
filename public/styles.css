@@ -241,6 +241,7 @@ video {
     font-family:'Vollkorn', serif;
 }
 
+/*also has properties set within phone device display*/
 span {
     max-width: 600px;
     padding-left: 15px; 
@@ -412,6 +413,8 @@ span {
     #header-container {
         height: 200px;
         width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
     #heading-one {
@@ -429,7 +432,7 @@ span {
     }
 
     #menu-bar ul li a {
-        font-size: 10px;
+        font-size: 13px;
         margin: 0;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -470,6 +473,10 @@ span {
 
     #about-me-container button:hover {
         font-size: 35px;
+    }
+
+    span {
+        padding-top: 0px;
     }
 
     #gmail-container #github-container #linkedin-container {
