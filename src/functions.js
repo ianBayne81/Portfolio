@@ -1,3 +1,13 @@
+//heading appearing 1.5s after page loads
+const headingContainer = document.querySelector('#header')
+const heading = document.createElement('h1')
+heading.textContent = 'Ianb.io'
+
+const renderHeading = () => {
+    headingContainer.appendChild(heading)
+}
+
+
 //aboutme button appears over video element
 const aboutMeSelect = document.querySelector('#about-me-container')
 const aboutMeButton = document.createElement('button')
@@ -36,4 +46,4 @@ minimiseButt.addEventListener("click", (e) => {
 })
 
 
-export { renderLearnMoreButton, initiateSpanText }
+export { renderHeading, renderLearnMoreButton, initiateSpanText }

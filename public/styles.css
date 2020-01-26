@@ -27,7 +27,8 @@ body {
 }
 
 /* also has properties set for phone device display far below*/
-#typewriter {
+#header {
+    max-width: 150px;
     color: rgb(12, 12, 12);
     font-family: monospace;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -36,10 +37,10 @@ body {
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-        typing 3.5s steps(30, end),
+        typing 7s steps(30, end),
         blink-caret .75s step-end infinite;
   }
-  
+
   /* The typing effect */
   @keyframes typing {
     from { width: 0 }
@@ -152,6 +153,22 @@ body {
     width: 200px;
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#buttonOne:hover {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+}
+
 #buttonTwo:hover {
     background-image: url("./images/hangman-button.jpg");
     background-repeat: no-repeat;
@@ -162,6 +179,13 @@ body {
     opacity: 9;
     height: 265px;
     width: 200px;
+}
+
+#buttonTwo:hover {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
 }
 
 #buttonThree:hover {
@@ -176,6 +200,13 @@ body {
     width: 200px;
 }
 
+#buttonThree:hover {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+}
+
 #buttonFour:hover {
     background-image: url("./images/horserider-button.jpg");
     background-repeat: no-repeat;
@@ -186,6 +217,13 @@ body {
     opacity: 9;
     height: 265px;
     width: 200px;
+}
+
+#buttonFour:hover {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
 }
 
 #about-me-container {
