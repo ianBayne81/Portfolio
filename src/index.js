@@ -1,16 +1,14 @@
-import { renderHeading, renderLearnMoreButton, initiateSpanText } from './functions.js'
-
-renderHeading()
+import { renderLearnMoreButton, initiateSpanText } from './functions.js'
 
 //delay project links opening for 1.5s to allow for project button animations to complete
 document.getElementById("project-container").addEventListener("click", function(e) {
 
-if (e.isTrusted) {
+    if (e.isTrusted) {
     e.preventDefault()
     setTimeout(function(){
         e.target.click()
     }, 1500)
-}
+    }
 })
 
 renderLearnMoreButton()
