@@ -15,12 +15,6 @@ body {
         
 /*also has properties set within phone device display far below*/
 #header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#wrapper {
     background-image: url("/images/headerbg2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -32,18 +26,93 @@ body {
     justify-content: center;
 }
 
-h1 {
-    font-size: 50px;
-    font-family: fantasy;
-    color: black;
-    font-weight: 900;
+#wrapper {
+    display: flex;
+    flex-direction: row;
 }
+
+.letter {
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    font-size: 80px;
+    padding: 5px;
+    color: transparent;
+    font-family: 'Gabriela', cursive;
+}
+
+#i  {
+    animation-name: lower;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+    
+}
+
+#a {
+    animation-name: lower;
+    animation-duration: 3.5s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#n {
+    animation-name: lower;
+    animation-duration: 5s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#b {
+    animation-name: lower;
+    animation-duration: 6.5s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#dot {
+    animation-name: lower;
+    animation-duration: 8s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#ii {
+    animation-name: lower;
+    animation-duration: 8s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#o {
+    animation-name: lower;
+    animation-duration: 9.5s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+@keyframes lower {
+    from {
+      height: 0px;
+    }
+    to {
+      height : 80px;
+    }
+    }
 
 #menu-bar {
     background: black;
     opacity: .8;
     height: auto;
     width: 100vw;
+    padding: 10px;
 }
 
 #menu-bar ul {
@@ -407,15 +476,29 @@ span {
         max-height: 100vh;
     }
     
-    #wrapper {
+    #header-container {
         height: 200px;
         width: 100%;
     }
 
-    h1 {
-        font-size: 50px;
-        font-weight: 700;
+    .letter {
+        position: relative;
+        overflow: hidden;
+        padding: 5px;
+        font-size: 60px;
+        padding: 5px;
+        color: transparent;
     }
+
+    @keyframes lower {
+        from {
+          height: 0px;
+        }
+        to {
+          height : 60px;
+        }
+        }
+    
 
     #project-container { 
         display: grid;
@@ -463,18 +546,29 @@ span {
         max-height: 100vh;
     }
 
-    #wrapper {
+    #header-container {
         height: 200px;
         width: 100%;
     }
-
-    h1 {
-        font-size: 20px;
-        font-weight: 700;
-        
+    
+    .letter {
+        position: relative;
+        overflow: hidden;
+        padding: 5px;
+        font-size: 40px;
+        padding: 5px;
+        color: transparent;
     }
-    
-    
+
+    @keyframes lower {
+        from {
+          height: 0px;
+        }
+        to {
+          height : 40px;
+        }
+        }
+
     #menu-bar ul li a {
         font-size: 13px;
         margin: 0;
