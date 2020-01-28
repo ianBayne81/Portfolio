@@ -20,7 +20,7 @@ body {
     background-position: center;
     background-size: cover;
     height: 400px;
-    width: 100%; 
+    max-width: 100vw; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,18 +31,27 @@ body {
     flex-direction: row;
 }
 
+@keyframes lower {
+    from {
+      top: 0%;
+    }
+    to {
+      top : 100%;
+    }
+    }
+
 .letter {
     position: relative;
     overflow: hidden;
     padding: 5px;
     font-size: 80px;
-    padding: 5px;
     color: transparent;
     font-family: 'Gabriela', cursive;
 }
 
 #i  {
     animation-name: lower;
+    transition-delay: 2s;
     animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
@@ -52,7 +61,8 @@ body {
 
 #a {
     animation-name: lower;
-    animation-duration: 3.5s;
+    transition-delay: 2.5s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
@@ -60,7 +70,8 @@ body {
 
 #n {
     animation-name: lower;
-    animation-duration: 5s;
+    transition-delay: 3s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
@@ -68,7 +79,44 @@ body {
 
 #b {
     animation-name: lower;
-    animation-duration: 6.5s;
+    transition-delay: 3.5s;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#aa {
+    animation-name: lower;
+    transition-delay: 4s;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#y {
+    animation-name: lower;
+    transition-delay: 4.5s;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#nn {
+    animation-name: lower;
+    transition-delay: 5s;
+    animation-duration: 2s;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+    color: black;
+}
+
+#e {
+    animation-name: lower;
+    transition-delay: 5.5s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
@@ -76,7 +124,8 @@ body {
 
 #dot {
     animation-name: lower;
-    animation-duration: 8s;
+    transition-delay: 6s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
@@ -84,7 +133,8 @@ body {
 
 #ii {
     animation-name: lower;
-    animation-duration: 8s;
+    transition-delay: 6.5s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
@@ -92,26 +142,18 @@ body {
 
 #o {
     animation-name: lower;
-    animation-duration: 9.5s;
+    transition-delay: 7s;
+    animation-duration: 2s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
     color: black;
 }
 
-@keyframes lower {
-    from {
-      height: 0px;
-    }
-    to {
-      height : 80px;
-    }
-    }
-
 #menu-bar {
     background: black;
     opacity: .8;
     height: auto;
-    width: 100vw;
+    max-width: 100vw;
     padding: 10px;
 }
 
@@ -144,6 +186,17 @@ body {
     transform: scale(1.2);
     font-weight: bold;
 
+}
+
+/* These following @media global settings are for desktop display */
+@media screen and (min-width: 901px) {
+    #project-container { 
+        display: grid;
+        grid-template-columns: 4fr, auto;
+        grid-template-rows: 350px;
+        grid-template-areas: 
+        "index-projectOne index-projectTwo index-projectThree index-projectFour";
+    }
 }
 
 #projectOne {
@@ -320,10 +373,10 @@ body {
 
 @keyframes rotateY {
     from {
-         -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
     to {
-        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
 }
 
@@ -453,16 +506,7 @@ span {
     margin: 10px;
 }
 
-/* These following setting are for desktop display only */
-@media screen and (min-width: 901px) {
-    #project-container { 
-        display: grid;
-        grid-template-columns: 4fr, auto;
-        grid-template-rows: 350px;
-        grid-template-areas: 
-        "index-projectOne index-projectTwo index-projectThree index-projectFour";
-    }
-}
+
 
 /* These following settings are for tablet display only */
 @media screen and (min-width: 500px) and (max-width: 900px) {
@@ -485,7 +529,7 @@ span {
         position: relative;
         overflow: hidden;
         padding: 5px;
-        font-size: 60px;
+        font-size: 40px;
         padding: 5px;
         color: transparent;
     }
@@ -495,7 +539,7 @@ span {
           height: 0px;
         }
         to {
-          height : 60px;
+          height : 40px;
         }
         }
     
@@ -555,7 +599,7 @@ span {
         position: relative;
         overflow: hidden;
         padding: 5px;
-        font-size: 40px;
+        font-size: 20px;
         padding: 5px;
         color: transparent;
     }
@@ -565,7 +609,7 @@ span {
           height: 0px;
         }
         to {
-          height : 40px;
+          height : 20px;
         }
         }
 
