@@ -4,6 +4,8 @@
 }
 
 body {
+    display: flex;
+    flex-wrap: wrap;
     background-image: url("./images/bodybg3.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -13,190 +15,114 @@ body {
     max-height: 100vh;
 }
         
-/*also has properties set within phone device display far below*/
 #header-container {
     background-image: url("/images/headerbg2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 400px;
-    max-width: 100vw; 
+    width: 100vw; 
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#wrapper {
-    display: flex;
-    flex-direction: row;
-}
-
-@keyframes lower {
-    from {
-      top: 0%;
-    }
-    to {
-      top : 100%;
-    }
-    }
-
-.letter {
-    position: relative;
-    overflow: hidden;
-    padding: 5px;
-    font-size: 80px;
-    color: transparent;
-    font-family: 'Gabriela', cursive;
-}
-
-#i  {
-    animation-name: lower;
-    transition-delay: 2s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-    
-}
-
-#a {
-    animation-name: lower;
-    transition-delay: 2.5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#n {
-    animation-name: lower;
-    transition-delay: 3s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#b {
-    animation-name: lower;
-    transition-delay: 3.5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#aa {
-    animation-name: lower;
-    transition-delay: 4s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#y {
-    animation-name: lower;
-    transition-delay: 4.5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#nn {
-    animation-name: lower;
-    transition-delay: 5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#e {
-    animation-name: lower;
-    transition-delay: 5.5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#dot {
-    animation-name: lower;
-    transition-delay: 6s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#ii {
-    animation-name: lower;
-    transition-delay: 6.5s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
-#o {
-    animation-name: lower;
-    transition-delay: 7s;
-    animation-duration: 2s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
-    color: black;
-}
-
 #menu-bar {
+    display: inline-block;
+    text-align: center;
     background: black;
     opacity: .8;
     height: auto;
-    max-width: 100vw;
+    width: 100%;
     padding: 10px;
 }
 
-#menu-bar ul {
-    justify-content: center;
-    text-align: center;
-}
-
-#menu-bar ul li {
+#resume {
     display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+    
 }
 
-/*menu-bar up li a also has properties for phone device display far below */
-#menu-bar ul li a {
-    display: block;
-    cursor: pointer;
-    margin: 10px;
+#resume:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+#resume-link {
     color: white;
     text-decoration: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-family: "Roboto", sans-serif;
+    font-family:'Vollkorn', serif;
     font-size: 20px;
 }
 
-#menu-bar ul li a:hover {
+#resume-link:hover {
     color: rgb(25, 240, 6);
-    transform: scale(1.2);
-    font-weight: bold;
-
 }
 
-/* These following @media global settings are for desktop display */
-@media screen and (min-width: 901px) {
-    #project-container { 
-        display: grid;
-        grid-template-columns: 4fr, auto;
-        grid-template-rows: 350px;
-        grid-template-areas: 
-        "index-projectOne index-projectTwo index-projectThree index-projectFour";
-    }
+#contact {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#contact:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+#contact-link {
+    color: white;
+    text-decoration: none;
+    font-family:'Vollkorn', serif;
+    font-size: 20px;
+}
+
+#contact-link:hover {
+    color: rgb(25, 240, 6);
+}
+
+#view-code {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#view-code:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+#viewcode-link {
+    color: white;
+    text-decoration: none;
+    font-family:'Vollkorn', serif;
+    font-size: 20px;
+}
+
+#viewcode-link:hover {
+    color: rgb(25, 240, 6);
+}
+
+#project-container-box {
+    width: 100vw; 
+    justify-content: center;
+    align-items: center;
+}
+
+#project-container { 
+    display: grid;
+    grid-template-columns: 3fr, auto;
+    grid-template-rows: 2fr, auto;
+    grid-template-areas: 
+    "index-projectOne index-projectTwo index-projectThree"
+    "index-projectFour index-projectFive index-projectSix";
+    grid-gap: 20px;
+    margin: 40px;
 }
 
 #projectOne {
@@ -223,7 +149,18 @@ body {
     align-self: center;
 }
 
-/*also has properties set within phone device display far below*/
+#projectFive {
+    grid-area: index-projectFive;
+    justify-self: center;
+    align-self: center;
+}
+
+#projectSix {
+    grid-area: index-projectSix;
+    justify-self: center;
+    align-self: center;
+}
+
 .button { 
     display: flex;
     justify-content: center;
@@ -247,19 +184,6 @@ body {
     cursor: pointer;
 }
 
-/*button one, two, three and four on hover also has properties set within phone device display far below*/
-#buttonOne:hover {
-    background-image: url("./images/volumecalc-button.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    border: solid 3pt white;
-    color: transparent;
-    opacity: 9;
-    height: 265px;
-    width: 200px;
-}
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -269,85 +193,51 @@ body {
     }
 }
 
-#buttonOne:hover {
+.button:hover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: solid 3pt white;
+    color: transparent;
+    opacity: 9;
+    height: 265px;
+    width: 200px;
     animation-name: rotate;
     animation-duration: 1s;
     animation-iteration-count: initial;
     animation-timing-function: linear;
+}
+
+#buttonOne:hover {
+    background-image: url("./images/volumcalc-button2.jpg");
 }
 
 #buttonTwo:hover {
     background-image: url("./images/hangman-button.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    border: solid 3pt white;
-    color: transparent;
-    opacity: 9;
-    height: 265px;
-    width: 200px;
-}
-
-#buttonTwo:hover {
-    animation-name: rotate;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
 }
 
 #buttonThree:hover {
     background-image: url("./images/todolist-button.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    border: solid 3pt white;
-    color: transparent;
-    opacity: 9;
-    height: 265px;
-    width: 200px;
-}
-
-#buttonThree:hover {
-    animation-name: rotate;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
 }
 
 #buttonFour:hover {
     background-image: url("./images/horserider-button.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    border: solid 3pt white;
-    color: transparent;
-    opacity: 9;
-    height: 265px;
-    width: 200px;
 }
 
-#buttonFour:hover {
-    animation-name: rotate;
-    animation-duration: 1s;
-    animation-iteration-count: initial;
-    animation-timing-function: linear;
+#buttonFive:hover {
+    background-image: url("./images/tayla.io-button.jpg");
+}
+
+#buttonSix:hover {
+    background-image: url("./images/calculator-button.jpg");
 }
 
 #about-me-container {
-    position: relative;
     height: 300px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#about-me {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
 }
 
 /* also has properties set within phone device display far below*/
@@ -380,7 +270,6 @@ body {
     }
 }
 
-/* also has phone device display far below*/
 #about-me-container button:hover {
     animation-name: rotateY;
     animation-duration: 0.8s;
@@ -392,19 +281,17 @@ body {
     display: flex; 
     justify-content: center;
     align-items: center;
-    color: aqua;
     background: rgba(0,0,0,0.7);
-    font-size: 20px;
-    font-family:'Vollkorn', serif;
 }
 
-/*also has properties set within phone device display*/
 span {
-    max-width: 600px;
-    padding-left: 15px; 
-    padding-right: 15px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 15px;
+    color: aqua;
+    font-size: 20px;
+    font-family:'Vollkorn', serif;
 }
 
 .close-span-button {
@@ -427,86 +314,85 @@ span {
 }
 
 #footer {
-    background: black;
+    display: block;
+    background-color: black;
     height: auto;
-    width: auto;
+    width: 100%;
     padding: 15px;
     
 }
 
-#footer ul {
-    justify-content: center;
+#footer-row-one {
     text-align: center;
 }
 
-#footer ul li {
+#gmail-container {
     display: inline-block;
-}
-
-/*logos and logo text both have properties for phone device display far below */
-#gmail-logo {
-    display: block;
     background-image: url("/images/gmaillogo.png");
     background-size: 100% 100%;
     cursor: pointer;
-    height:70px;
-    width:70px;
+    height:72px;
+    width:72px;
     margin: 10px;
 }
 
-#gmail-logo:hover {
-    transform: scale(1.1);
-}
-
-#github-logo {
-    display: block;
+#github-container {
+    display: inline-block;
     background-image: url("/images/githublogo.png");
     background-size: 100% 100%;
     cursor: pointer;
-    height:70px;
-    width:70px;
+    height:72px;
+    width:72px;
     margin: 10px;
 }
 
-#github-logo:hover {
-    transform:scale(1.1);
-}
-
-#linkedin-logo {
-    display: block;
+#linkedin-container {
+    display: inline-block;
     background-image: url("/images/linkedin-icon.jpg");
     background-size: 100% 100%;
     cursor: pointer;
-    height:70px;
-    width:70px;
+    height:72px;
+    width:72px;
     margin: 10px;
 }
 
-#linkedin-logo:hover {
-    transform: scale(1.1);
+#gmail-container:hover {
+    transform: scale(1.2);
 }
 
-#footer-text-row li {
-    font-size: 18px;
+#github-container:hover {
+    transform: scale(1.2);
+}
+
+#linkedin-container:hover {
+    transform: scale(1.2);
+}
+
+#footer-row-two {
+    text-align: center;
+}
+
+.logo-text {
+    display: inline-block;
+    width: 72px;
+    margin: 10px;
     color: white;
-}   
-
-#gmail-text {
-    width: 70px;
-    margin: 10px;
+    font-size: 15px;
 }
 
-#github-text {
-    width: 70px;
-    margin: 10px;
+#footer-letters-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: rotate(180deg)
 }
 
-#linkedin-text {
-    width: 70px;
-    margin: 10px;
+.letter {
+    padding: 5px;
+    font-size: 80px;
+    color: black;
+    font-family: 'Gabriela', cursive;
 }
-
-
 
 /* These following settings are for tablet display only */
 @media screen and (min-width: 500px) and (max-width: 900px) {
@@ -515,23 +401,20 @@ span {
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover; 
+        background-size: cover;  
         max-width: 100vw;
         max-height: 100vh;
     }
     
     #header-container {
         height: 200px;
-        width: 100%;
+        width: 100vw;
     }
 
     .letter {
-        position: relative;
-        overflow: hidden;
         padding: 5px;
         font-size: 40px;
         padding: 5px;
-        color: transparent;
     }
 
     @keyframes lower {
@@ -543,34 +426,19 @@ span {
         }
         }
     
-
     #project-container { 
         display: grid;
         grid-template-columns: 2fr, auto;
-        grid-template-rows: 2, auto;
+        grid-template-rows: 3fr, auto;
         grid-template-areas: 
         "index-projectOne index-projectTwo"
-        "index-projectThree index-projectFour";
+        "index-projectThree index-projectFour"
+        "index-projectFive index-projectSix";
         grid-gap: 20px;
         margin: 20px;
     }
 
-    #buttonOne:hover {
-        height: 250px;
-        width: 200px;
-    }
-    
-    #buttonTwo:hover {
-        height: 250px;
-        width: 200px;
-    }
-    
-    #buttonThree:hover {
-        height: 250px;
-        width: 200px;
-    }
-    
-    #buttonFour:hover {
+    .button:hover {
         height: 250px;
         width: 200px;
     }
@@ -596,12 +464,9 @@ span {
     }
     
     .letter {
-        position: relative;
-        overflow: hidden;
         padding: 5px;
         font-size: 20px;
         padding: 5px;
-        color: transparent;
     }
 
     @keyframes lower {
@@ -613,26 +478,46 @@ span {
         }
         }
 
-    #menu-bar ul li a {
+    #resume {
+        padding: 0;
+        margin: 10px;
+    }
+
+    #resume-link {
         font-size: 13px;
-        margin: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
+    }
+
+    #contact {
+        padding: 0;
+        margin: 10px;
+    }
+
+    #contact-link {
+        font-size: 13px;
+    }
+
+    #view-code {
+        padding: 0;
+        margin: 10px;
+    }
+
+    #viewcode-link {
+        font-size: 13px;
     }
 
     #project-container { 
         display: grid;
         grid-template-columns: 1fr, auto;
-        grid-template-rows: 4fr, auto;
+        grid-template-rows: 6fr, auto;
         grid-template-areas: 
         "index-projectOne"
         "index-projectTwo"
         "index-projectThree"
-        "index-projectFour";
+        "index-projectFour"
+        "index-projectFive"
+        "index-projectSix";
         grid-gap: 20px;
-        margin: 20px;
+        margin: 20px; 
     }
 
     .button {
@@ -641,24 +526,14 @@ span {
         font-size: 20px;
     }
 
-    #buttonOne:hover {
+    .button:hover {
         height: 200px;
         width: 150px;
     }
-    
-    #buttonTwo:hover {
-        height: 200px;
-        width: 150px;
-    }
-    
-    #buttonThree:hover {
-        height: 200px;
-        width: 150px;
-    }
-    
-    #buttonFour:hover {
-        height: 200px;
-        width: 150px;
+
+    #about-me-container {
+        height: 150px;
+        width: 100%;
     }
 
     /* Javascript element button*/
@@ -673,21 +548,42 @@ span {
     }
 
     span {
-        padding-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 10px;
+        font-size: 15px;
     }
 
-    #gmail-container #github-container #linkedin-container {
-        width: 80px;
+    #footer {
+        padding: 5px;
     }
 
-    #gmail-logo #github-logo #linkedin-logo {
-        height: 50px;
-        width: 50px;
+    #gmail-container {
+        height: 55px;
+        width: 55px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
-    #gmail-text #github-text #linkedin-text {
-        width: 50px;
-        font-size: 10px;
+    #github-container {
+        height: 55px;
+        width: 55px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
+    #linkedin-container {
+        height: 55px;
+        width: 55px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .logo-text {
+        width: 55px;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
 }
