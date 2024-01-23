@@ -7,6 +7,7 @@ import { Flip } from "gsap/Flip";
 gsap.registerPlugin(Flip);
 
 //Rehome letter elements upon page load
+
 window.onload = () => {
     rehomeLetters()
 }

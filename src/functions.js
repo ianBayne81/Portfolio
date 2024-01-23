@@ -4,56 +4,24 @@ import { Flip } from "gsap/Flip";
 
 gsap.registerPlugin(Flip);
 
-//Rehome letter elements upon page load using GSAP FLIP methods
-const selectLetterI = document.querySelector('#i')
-const selectLetterA = document.querySelector('#a')
-const selectLetterN = document.querySelector('#n')
-const selectLetterB = document.querySelector('#b')
-const selectLetterAa = document.querySelector('#aa')
-const selectLetterY = document.querySelector('#y')
-const selectLetterNn = document.querySelector('#nn')
-const selectLetterE = document.querySelector('#e')
-const selectLetterDot = document.querySelector('#dot')
-const selectLetterIi = document.querySelector('#ii')
-const selectLetterO = document.querySelector('#o')
-const letterHome = document.querySelector('#header-container')
+// letters to bounce in from top of screen when page loads
 const rehomeLetters = function () {
-    let letterI = Flip.getState('#i')
-    let letterA = Flip.getState('#a')
-    let letterN = Flip.getState('#n')
-    let letterB = Flip.getState('#b')
-    let letterAa = Flip.getState('#aa')
-    let letterY = Flip.getState('#y')
-    let letterNn = Flip.getState('#nn')
-    let letterE = Flip.getState('#e')
-    let letterDot = Flip.getState('#dot')
-    let letterIi = Flip.getState('#ii')
-    let letterO = Flip.getState('#o')
-    letterHome.appendChild(selectLetterI)
-    letterHome.appendChild(selectLetterA)
-    letterHome.appendChild(selectLetterN)
-    letterHome.appendChild(selectLetterB)
-    letterHome.appendChild(selectLetterAa)
-    letterHome.appendChild(selectLetterY)
-    letterHome.appendChild(selectLetterNn)
-    letterHome.appendChild(selectLetterE)
-    letterHome.appendChild(selectLetterDot)
-    letterHome.appendChild(selectLetterIi)
-    letterHome.appendChild(selectLetterO)
-    Flip.from(letterI, {duration: 3, ease: "power1.out"})
-    Flip.from(letterA, {duration: 3.5, ease: "power1.out"})
-    Flip.from(letterN, {duration: 4, ease:"power1.out"})
-    Flip.from(letterB, {duration: 4.5, ease: "power1.out"})
-    Flip.from(letterAa, {duration: 5, ease: "power1.out"})
-    Flip.from(letterY, {duration: 5.5, ease: "power1.out"})
-    Flip.from(letterNn, {duration: 6, ease: "power1.out"})
-    Flip.from(letterE, {duration: 6.5, ease: "power1.out"})
-    Flip.from(letterDot, {duration: 7, ease: "power1.out"})
-    Flip.from(letterIi, {duration: 7.5, ease: "power1.out"})
-    Flip.from(letterO, {duration: 8, ease: "power1.out"})
+    
+gsap.from("#i", {duration: 4, y: -300, opacity: 0, delay: 0, ease: "bounce"})
+gsap.from("#a", {duration: 4, y: -300, opacity: 0, delay: 0.5, ease: "bounce"})
+gsap.from("#n", {duration: 4, y: -300, opacity: 0, delay: 1, ease: "bounce"})
+gsap.from("#b", {duration: 4, y: -300, opacity: 0, delay: 1.5, ease: "bounce"})
+gsap.from("#aa", {duration: 4, y: -300, opacity: 0, delay: 2, ease: "bounce"})
+gsap.from("#y", {duration: 4, y: -300, opacity: 0, delay: 2.5, ease: "bounce"})
+gsap.from("#nn", {duration: 4, y: -300, opacity: 0, delay: 3, ease: "bounce"})
+gsap.from("#e", {duration: 4, y: -300, opacity: 0, delay: 3.5, ease: "bounce"})
+gsap.from("#dot", {duration: 4, y: -300, opacity: 0, delay: 4, ease: "bounce"})
+gsap.from("#ii", {duration: 4, y: -300, opacity: 0, delay: 4.5, ease: "bounce"})
+gsap.from("#o", {duration: 4, y: -300, opacity: 0, delay: 5, ease: "bounce"})
+
 }
 
-//aboutme button appears over video element
+//about me button appears within about me container element
 const aboutMeSelect = document.querySelector('#about-me-container')
 const aboutMeButton = document.createElement('button')
 aboutMeButton.textContent = 'learn more about me'
