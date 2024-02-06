@@ -9,10 +9,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="HTML5, CSS3, Modern JavaScript, Portfolio">
     <meta name="keywords" content="Ian Bayne">
-    <link href="https://fonts.googleapis.com/css?family=Gabriela" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Yeseva+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <meta http-equiv="Cache-control" content="public">
+    <link rel="icon" type="image/x-icon" href="/images/MIJTv2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&family=Vollkorn+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Gabriela&family=Vollkorn+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 
 </head>
@@ -22,50 +25,50 @@
     <div id="page-container">
 
         <div id="header">
-            <div id="i" class="letter">I</div>
-            <div id="a" class="letter">a</div>
-            <div id="n" class="letter">n</div>
-            <div id="b" class="letter">B</div>
-            <div id="aa" class="letter">a</div>
-            <div id="y" class="letter">y</div>
-            <div id="nn" class="letter">n</div>
-            <div id="e" class="letter">e</div>
-            <div id="dot" class="letter">.</div>
-            <div id="ii" class="letter">i</div>
-            <div id="o" class="letter">o</div>
+            <div id="i" class="letters">I</div>
+            <div id="a" class="letters">a</div>
+            <div id="n" class="letters">n</div>
+            <div id="b" class="letters">B</div>
+            <div id="aa" class="letters">a</div>
+            <div id="y" class="letters">y</div>
+            <div id="nn" class="letters">n</div>
+            <div id="e" class="letters">e</div>
+            <div id="dot" class="letters">.</div>
+            <div id="ii" class="letters">i</div>
+            <div id="o" class="letters">o</div>
         </div>   
         
         <div id="menu-bar">
-            <div id="resume"><a href="images/Ian-Bayne.pdf" id="resume-link">RESUME</a></div>
-            <div id="contact"><a href="mailto:ian.bayne81series@gmail.com" id="contact-link">CONTACT</a></div>
-            <div id="view-code"><a href="https://github.com/ianBayne81" id="viewcode-link">GITHUB</a></div>
+            <div class="menu-options"><a href="images/Ian-Bayne.pdf" class="menu-links">RESUME</a></div>
+            <div class="menu-options"><a href="mailto:ian.bayne81series@gmail.com" class="menu-links">CONTACT</a></div>
+            <div class="menu-options"><a href="https://github.com/ianBayne81" class="menu-links">GITHUB</a></div>
         </div>
 
         
         <div id="project-container">
 
             <div id="projectOne">
-                <a href="https://volumecalculator.netlify.com" class="button" id="buttonOne">VOLUME CALCULATOR</a>
+                <button class="buttons" id="buttonOne">VOLUME CALCULATOR</button>
             </div>
 
             <div id="projectTwo">
-                <a href="https://playhangmangame.netlify.com" class="button" id="buttonTwo">HANGMAN GAME</a>
+                <button class="buttons" id="buttonTwo">HANGMAN GAME</button>
             </div>
 
             <div id="projectThree">
-                <a href="https://yourlist.netlify.com" class="button" id="buttonThree">TO-DO LIST</a>
+                <button class="buttons" id="buttonThree">TO-DO LIST</button>
             </div>
 
             <div id="projectFour">
-                <a href="https://jumpingromeo.netlify.com" class="button" id="buttonFour">JASY.IO</a>
+                <button class="buttons" id="buttonFour">JASY.IO</button>
             </div>
 
             <div id="projectFive">
-                <a href="https://www.tayla.io" class="button" id="buttonFive">TAYLA.IO</a>
+                <button class="buttons" id="buttonFive">TAYLA.IO</button>
             </div>
 
             <div id="projectSix">
-                <a href="https://handy-calc.netlify.app" class="button" id="buttonSix">CALCULATOR</a>
+                <button class="buttons" id="buttonSix">CALCULATOR</button>
             </div>
 
         </div>
@@ -97,6 +100,9 @@
 
     </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
 <script src="/scripts/bundle.js"></script>
 
 </body>
