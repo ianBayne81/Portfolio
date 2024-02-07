@@ -73,6 +73,7 @@ aboutMePara.textContent = 'My family and I reside in Townsville, North Queenslan
  web development portfolio displaying the use of html5, CSS3 and modern Javascript languages. \
  My goal is to continue to build on these skills, learning and creating exciting opportunities. Please enjoy.' 
 
+ //create button to close and hide the text span
 const minimiseButt = document.createElement('button')
 minimiseButt.textContent = 'close'
 minimiseButt.classList.add('close-span-button')
