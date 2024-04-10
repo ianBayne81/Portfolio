@@ -4,7 +4,7 @@
 }
 
 body {
-    width: 100vw;
+    width: auto;
     height: auto;
     background-image: url("./images/bodybg3.jpg");
     background-attachment: fixed;
@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 100%;
+    width: 100vw;
 } 
 
 #header {
@@ -74,14 +74,18 @@ body {
 
 #project-container { 
     display: grid;
+    text-align: center;
+    grid-gap: 100px;
     margin-top: 25px;
-    grid-gap: 50px;
-    margin: 40px;
-    grid-template-columns: 3fr, auto;
-    grid-template-rows: 2fr, auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 2fr, auto;
+    grid-template-rows: 4fr, auto;
     grid-template-areas: 
-    "index-projectOne index-projectTwo index-projectThree"
-    "index-projectFour index-projectFive index-projectSix";
+    "index-projectOne index-projectTwo"
+    "index-projectThree index-projectFour"
+    "index-projectFive index-projectSix"
+    "index-projectSeven index-projectEight";
 }
 
 #projectOne {
@@ -116,6 +120,18 @@ body {
 
 #projectSix {
     grid-area: index-projectSix;
+    justify-self: center;
+    align-self: center;
+}
+
+#projectSeven {
+    grid-area: index-projectSeven;
+    justify-self: center;
+    align-self: center;
+}
+
+#projectEight {
+    grid-area: index-projectEight;
     justify-self: center;
     align-self: center;
 }
@@ -187,6 +203,14 @@ body {
 
 #buttonSix:hover {
     background-image: url("./images/calculator-button.jpg");
+}
+
+#buttonSeven:hover {
+    background-image: url("./images/rps-button.jpg");
+}
+
+#buttonEight:hover {
+    background-image: url("./images/contacts-button.jpg");
 }
 
 #about-me-container {
@@ -321,7 +345,7 @@ span {
 }
 
 /* These following settings are for tablet display only */
-@media screen and (min-width: 500px) and (max-width: 900px) {
+@media screen and (min-width: 550px) and (max-width: 900px) {
     #page-container {
         background-image: url("./images/bodybg3.jpg");
         background-attachment: fixed;
@@ -343,20 +367,6 @@ span {
         color: black;
         font-family: 'Gabriela', cursive;
     }
-    
-    #project-container { 
-        display: grid;
-        grid-gap: 40px;
-        margin-top: 25px;
-        margin-left: 20px;
-        margin-right: 20px;
-        grid-template-columns: 2fr, auto;
-        grid-template-rows: 3fr, auto;
-        grid-template-areas: 
-        "index-projectOne index-projectTwo"
-        "index-projectThree index-projectFour"
-        "index-projectFive index-projectSix";
-    }
 
     .buttons:hover {
         height: 250px;
@@ -366,7 +376,7 @@ span {
 }
 
 /* These setting are for phone display only */
-@media screen and (min-width: 0px) and (max-width: 500px) {
+@media screen and (min-width: 0px) and (max-width: 549px) {
     
     #page-container {
         background-image: url("./images/bodybg1.jpg");
@@ -402,17 +412,19 @@ span {
         display: grid;
         grid-gap: 35px;
         margin-top: 25px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
         grid-template-columns: 1fr, auto;
-        grid-template-rows: 6fr, auto;
+        grid-template-rows: 8fr, auto;
         grid-template-areas: 
         "index-projectOne"
         "index-projectTwo"
         "index-projectThree"
         "index-projectFour"
         "index-projectFive"
-        "index-projectSix";
+        "index-projectSix"
+        "index-projectSeven"
+        "index-projectEight";
     }
 
     .buttons {
