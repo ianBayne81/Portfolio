@@ -73,71 +73,19 @@ body {
 }
 
 #project-container { 
-    display: grid;
-    text-align: center;
-    grid-gap: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 500px;
+    justify-content: center;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    grid-template-columns: 2fr, auto;
-    grid-template-rows: 4fr, auto;
-    grid-template-areas: 
-    "index-projectOne index-projectTwo"
-    "index-projectThree index-projectFour"
-    "index-projectFive index-projectSix"
-    "index-projectSeven index-projectEight";
-}
-
-#projectOne {
-    grid-area: index-projectOne;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectTwo {
-    grid-area: index-projectTwo;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectThree {
-    grid-area: index-projectThree;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectFour {
-    grid-area: index-projectFour;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectFive {
-    grid-area: index-projectFive;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectSix {
-    grid-area: index-projectSix;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectSeven {
-    grid-area: index-projectSeven;
-    justify-self: center;
-    align-self: center;
-}
-
-#projectEight {
-    grid-area: index-projectEight;
-    justify-self: center;
-    align-self: center;
 }
 
 .buttons { 
     display: flex;
+    margin: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -211,6 +159,10 @@ body {
 
 #buttonEight:hover {
     background-image: url("./images/contacts-button.jpg");
+}
+
+#buttonNine:hover {
+    background-image: url("./images/space-button.jpg");
 }
 
 #about-me-container {
@@ -409,22 +361,7 @@ span {
     }
 
     #project-container { 
-        display: grid;
-        grid-gap: 35px;
-        margin-top: 25px;
-        margin-left: auto;
-        margin-right: auto;
-        grid-template-columns: 1fr, auto;
-        grid-template-rows: 8fr, auto;
-        grid-template-areas: 
-        "index-projectOne"
-        "index-projectTwo"
-        "index-projectThree"
-        "index-projectFour"
-        "index-projectFive"
-        "index-projectSix"
-        "index-projectSeven"
-        "index-projectEight";
+        width: 300px;
     }
 
     .buttons {

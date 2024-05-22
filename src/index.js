@@ -62,6 +62,13 @@ document.querySelector("#buttonEight").addEventListener("click", function(e){
     }, 1500)  
 })
 
+document.querySelector("#buttonNine").addEventListener("click", function(e){
+    e.preventDefault()
+    setTimeout(() => {
+        window.location.assign("https://galacticbattle.netlify.app")
+    }, 1500)  
+})
+
 
 //create button to appear within the about me container element
 
