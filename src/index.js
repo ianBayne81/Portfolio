@@ -4,26 +4,65 @@
 
 gsap.from(".letters", {y: -250, delay: 1.5, duration: 1.5, stagger: .25, ease: "back"})
 
+// menu to slide in / options to lower on delay / svg to animate on click
+
+const toggleMenu = document.querySelector(".menu-slide")
+const toggleOptions = document.querySelectorAll(".option-button-curtain")
+const closeDiv = document.querySelector(".close-div")
+
+document.querySelector(".menu-button").addEventListener("click", function (e) {
+    e.preventDefault()
+    
+    closeDiv.classList.toggle("close-div-down")
+
+    toggleMenu.classList.toggle("menu-slide-active")
+
+    toggleOptions.forEach(function (item) {
+        item.classList.toggle("option-button-curtain-active")
+    })
+
+})
+
+// menu option eventlisteners
+const github = document.querySelector("#github")
+const contact = document.querySelector("#contact")
+const resume = document.querySelector("#resume")
+
+github.addEventListener("click", function (e) {
+    e.preventDefault()
+    location.assign("https://github.com/ianBayne81")
+})
+
+contact.addEventListener("click", function (e) {
+    e.preventDefault()
+    location.assign("mailto:ian.bayne81series@gmail.com")
+})
+
+resume.addEventListener("click", function (e) {
+    e.preventDefault()
+    location.assign("images/Ian-Bayne.pdf")
+})
+
 // event listeners for project buttons / with 1.5s delay to allow for the css animation
 
 document.querySelector("#buttonOne").addEventListener("click", function(e){
     e.preventDefault()
     setTimeout(() => {
-        window.location.assign("https://volumecalculator.netlify.com")
+        window.location.assign("https://volumecalculator.netlify.app")
     }, 1500)
 })
 
 document.querySelector("#buttonTwo").addEventListener("click", function(e){
     e.preventDefault()
     setTimeout(() => {
-        window.location.assign("https://playhangmangame.netlify.com")
+        window.location.assign("https://playhangmangame.netlify.app")
     }, 1500)  
 })
 
 document.querySelector("#buttonThree").addEventListener("click", function(e){
     e.preventDefault()
     setTimeout(() => {
-        window.location.assign("https://yourlist.netlify.com")
+        window.location.assign("https://yourlist.netlify.app")
     }, 1500)  
 })
 
@@ -116,3 +155,185 @@ document.querySelector('.about-me-button').addEventListener("click", (e) => {
     initiateSpanText()
 })
 
+//code for images element
+
+//key variables
+const selectDiv = document.querySelectorAll(".images")
+let rightArray = []
+let leftArray = []
+
+//set up each div
+selectDiv.forEach(function (item) {
+    leftArray.push(item)
+    item.style.zIndex = 0
+
+    leftArray.forEach((number) => {
+        number.style.left = leftArray.indexOf(number) * 10 + "px"
+    })
+
+    // let createPara = document.createElement('p')
+    // createPara.textContent = item.id
+    // item.appendChild(createPara)  
+    
+})
+
+//eventlisteners for each div
+selectDiv.forEach(function(item) {
+
+    let startX
+    //let startY
+    let getId
+    let result
+
+    item.addEventListener('touchstart', function(e) {
+        e.preventDefault()
+        
+            startX = e.touches[0].clientX
+            //startY = e.touches[0].clientY
+            getId = e.target.id
+            result = document.getElementById(getId)
+        
+    })
+        
+    item.addEventListener('touchend', function(e) {
+        e.preventDefault()
+
+        let endX = e.changedTouches[0].clientX
+        //let endY = e.changedTouches[0].clientY
+        let resultX = endX - startX
+        //let resultY = endY - startY
+        
+        if (!rightArray.includes(result) &&
+                resultX > 5) { 
+
+            if (rightArray.length === 0) {
+
+                result.style.zIndex++
+                let remove = leftArray.indexOf(result)
+                leftArray.splice(remove, 1)
+                
+                rightArray.push(result)
+                let right = (rightArray.indexOf(result) * 10)
+                result.style.left = right + 200 + "px"
+                result.style.transition = "left 2s"
+                
+            } else if (rightArray.length > 0) {
+
+                const previousElementRight = rightArray[rightArray.length - 1]    
+                let resultTwo = previousElementRight.style.zIndex
+                result.style.zIndex = ++resultTwo 
+                    
+                let remove = leftArray.indexOf(result)
+                leftArray.splice(remove, 1)
+                
+                rightArray.push(result)
+                let right = (rightArray.indexOf(result) * 10)
+                result.style.left = right + 200 + "px"
+                result.style.transition = "left 2s"
+                
+                
+            }
+
+        } else if (!leftArray.includes(result) &&
+                    resultX < -5) {
+            
+            if (leftArray.length === 0) {
+
+                result.style.zIndex++
+                let remove = rightArray.indexOf(result)
+                rightArray.splice(remove, 1)
+                
+                leftArray.push(result)
+                result.style.left = leftArray.indexOf(result) * 10 + "px"
+                result.style.transition = "left 2s"
+                
+            } else if (leftArray.length > 0){
+
+                const previousElementLeft = leftArray[leftArray.length - 1]
+                let resultTwo = previousElementLeft.style.zIndex
+                result.style.zIndex = ++resultTwo 
+
+                let remove = rightArray.indexOf(result)
+                rightArray.splice(remove, 1)
+                
+                leftArray.push(result)
+                result.style.left = leftArray.indexOf(result) * 10 + "px"
+                result.style.transition = "left 2s"
+        
+            }
+            
+        }
+        
+    })
+
+    item.addEventListener('click', function(e) {
+        e.preventDefault()
+
+        if (e.pointerType === "mouse") {
+            getId = e.target.id
+            result = document.getElementById(getId)
+        } else {
+            return
+        }
+        
+        if (!rightArray.includes(result)) { 
+
+            if (rightArray.length === 0) {
+
+                result.style.zIndex++
+                let remove = leftArray.indexOf(result)
+                leftArray.splice(remove, 1)
+                
+                rightArray.push(result)
+                let right = (rightArray.indexOf(result) * 10)
+                result.style.left = right + 200 + "px"
+                result.style.transition = "left 2s"
+                
+            } else if (rightArray.length > 0) {
+
+                const previousElementRight = rightArray[rightArray.length - 1]    
+                let resultTwo = previousElementRight.style.zIndex
+                result.style.zIndex = ++resultTwo 
+                    
+                let remove = leftArray.indexOf(result)
+                leftArray.splice(remove, 1)
+                
+                rightArray.push(result)
+                let right = (rightArray.indexOf(result) * 10)
+                result.style.left = right + 200 + "px"
+                result.style.transition = "left 2s"
+                
+                
+            }
+
+        } else if (!leftArray.includes(result)) {
+            
+            if (leftArray.length === 0) {
+
+                result.style.zIndex++
+                let remove = rightArray.indexOf(result)
+                rightArray.splice(remove, 1)
+                
+                leftArray.push(result)
+                result.style.left = leftArray.indexOf(result) * 10 + "px"
+                result.style.transition = "left 2s"
+                
+            } else if (leftArray.length > 0){
+
+                const previousElementLeft = leftArray[leftArray.length - 1]
+                let resultTwo = previousElementLeft.style.zIndex
+                result.style.zIndex = ++resultTwo 
+
+                let remove = rightArray.indexOf(result)
+                rightArray.splice(remove, 1)
+                
+                leftArray.push(result)
+                result.style.left = leftArray.indexOf(result) * 10 + "px"
+                result.style.transition = "left 2s"
+        
+            }
+            
+        }  
+    })
+
+})

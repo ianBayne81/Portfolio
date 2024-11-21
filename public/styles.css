@@ -14,10 +14,12 @@ body {
 } 
 
 #page-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: auto;
     width: 100vw;
+    overflow: hidden;
 } 
 
 #header {
@@ -25,9 +27,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 300px;
+    height: 200px;
     width: 100%; 
     margin: 0;
+    border-bottom: 5px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,36 +43,130 @@ body {
     font-family: 'Gabriela', cursive;
 }
 
-#menu-bar {
-    text-align: center;
-    background: black;
-    opacity: .8;
-    height: auto;
+.menu-bar {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    height: 40px;
+    width: 40px;
+    z-index: 110;
+    border: 2px solid lime;
+    overflow: hidden;
+}
+
+.menu-svg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
     width: 100%;
+    z-index: 111;
+    background-color: black;
 }
 
-.menu-options {
-    display: inline-block;
-    text-align: center;
-    height: auto;
-    width: auto;
-    margin: 20px;
+.lines{
+    stroke: lime;
+    stroke-width: 4px;
+    transition: all 2s;
 }
 
-.menu-links {
-    color: white;
-    text-decoration: none;
-    font-family:'Vollkorn', serif;
+.close-div {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: lime;
     font-size: 20px;
+    z-index: 112;
+    border: none;
+    transition: top 1s;
+    transition-property: top;
+
+}
+
+.close-div-down {
+    top: 0px;
+    transition: top 1s;
+    transition-property: top;
+
+}
+
+.menu-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 113;
+    background-color: transparent;
+    border: none;
+    color: lime;
     cursor: pointer;
 }
 
-.menu-links:hover {
-    color: rgb(25, 240, 6);
+.menu-slide {
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    right: -100vw;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: black;
+    transition: all 1.5s linear;
 }
 
-.menu-options:hover {
-    transform: scale(1.2);
+.menu-slide-active {
+    right: -50%;
+    transition: all 1.5s linear;
+}
+
+.option {
+    position: relative;
+    top: 150px;
+    left: 0px;
+    height: 50px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.option-button {
+    height: 100%;
+    width: 100%;
+    padding-left: 50px;
+    font-size: 25px;
+    text-align: left;
+    background-color: black;
+    border: none;
+    color: lime;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    background-color: rgb(35, 35, 35);
+}
+
+.option-button-curtain {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 50px;
+    width: 100vw;
+    z-index: 150;
+    background-color: black;
+    opacity: .8;
+}
+
+.option-button-curtain-active {
+    right: -100vw;
+    transition: right 2.5s;
+    transition-delay: 1.5s;
+    transition-property: right;
 }
 
 #project-container { 
@@ -214,11 +311,14 @@ body {
     display: flex; 
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
     background: rgba(0,0,0,0.7);
 }
 
 span {
-    width: auto;
+    width: 100%;
     margin-left: 100px;
     margin-right: 100px;
     padding: 15px;
@@ -244,6 +344,64 @@ span {
 .close-span-button:hover {
     border-bottom: 2px solid white;
     color: aquamarine;
+}
+
+#box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 210px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.images {
+    height: 200px;
+    width: 110px;
+    position: absolute;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border: 3px solid white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#imageOne {
+    background-image: url("/images/ianluna.jpg");
+    background-size: 100% 100%;
+}
+
+#imageTwo {
+    background-image: url("/images/melluna.jpg");
+    background-size: 100% 100%;
+}
+
+#imageThree {
+    background-image: url("/images/ianmel.jpeg");
+    background-size: 100% 100%;
+    
+}
+
+#imageFour {
+    background-image: url("/images/mumdad.jpg");
+    background-size: 100% 100%;
+    
+}
+
+#imageFive {
+    background-image: url("/images/jastay.jpg");
+    background-size: 100% 100%;;
+    
+}
+
+#imageSix {
+    background-image: url("/images/jastay2.jpg");
+    background-size: 100% 100%;;
+    
 }
 
 #footer {
@@ -282,6 +440,9 @@ span {
     transform: scale(1.2);
 }
 
+#footer-row-one {
+    margin-top: 10px;
+}
 #footer-row-two {
     text-align: center; 
     
@@ -297,7 +458,7 @@ span {
 }
 
 /* These following settings are for tablet display only */
-@media screen and (min-width: 550px) and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 900px) {
     #page-container {
         background-image: url("./images/bodybg3.jpg");
         background-attachment: fixed;
@@ -307,11 +468,6 @@ span {
         width: 100vw;
         height: auto;
     }
-    
-    #header {
-        height: 200px;
-        width: 100vw;
-    }
 
     .letters {
         padding: 5px;
@@ -320,6 +476,12 @@ span {
         font-family: 'Gabriela', cursive;
     }
 
+    .menu-bar {
+        top: 70px;
+        right: 50px;
+        
+    }
+    
     .buttons:hover {
         height: 250px;
         width: 200px;
@@ -328,7 +490,7 @@ span {
 }
 
 /* These setting are for phone display only */
-@media screen and (min-width: 0px) and (max-width: 549px) {
+@media screen and (min-width: 0px) and (max-width: 600px) {
     
     #page-container {
         background-image: url("./images/bodybg1.jpg");
@@ -339,11 +501,6 @@ span {
         width: 100vw;
         height: auto;
     }
-
-    #header {
-        height: 180px;
-        width: 100%;
-    }
     
     .letters {
         padding: 5px;
@@ -352,12 +509,18 @@ span {
         font-family: 'Gabriela', cursive;
     }
 
-    .menu-options {
-        margin: 10px;
+    .menu-bar {
+        top: 20px;
+        right: 20px;
+        
     }
 
-    .menu-links {
-        font-size: 13px;
+    .menu-slide-active {
+        right: 0%;
+    }
+
+    .option {
+        top: 100px;
     }
 
     #project-container { 
@@ -391,11 +554,18 @@ span {
         font-weight: bolder;
     }
 
+    #more-span {
+        width: 100vw;
+    }
     span {
         margin-left: 30px;
         margin-right: 30px;
         padding: 10px;
         font-size: 15px;
+    }
+
+    #box {
+        width: 100vw;
     }
 
     .logo {
