@@ -1,4 +1,65 @@
+//geolocation api method to get coordinates of device
+//openstreetmap.org api to get location data using coordinates on map 
+//weatherapi.com to get temp data using location data
 
+function getLocation() {
+
+    if (navigator.geolocation)  { 
+        navigator.geolocation.getCurrentPosition( (GeoLocationPosition) => {
+            let latitude = GeoLocationPosition.coords.latitude
+            let longitude = GeoLocationPosition.coords.longitude
+            console.log(GeoLocationPosition.timestamp)
+            
+            fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok')
+                }
+                return response.json()
+            })
+            .then(data => {
+                const details = data.display_name
+                const suburb = data.address.city_district
+                //console.log(data)
+                
+                const locationDiv = document.querySelector(".location-div")
+                locationDiv.innerHTML = ""
+                const locationEl = document.createElement('p')
+                locationEl.className = "details"
+                locationEl.textContent = suburb
+                locationDiv.appendChild(locationEl)
+
+                return fetch(`https://api.weatherapi.com/v1/current.json?key=5a9d09b41eac4f5b9e554330240312&q=${details}&aqi=no`)
+            })
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json()
+            })
+            .then(details => {
+                    const temp = details.current.temp_c
+                    //const feelsLike = details.current.feelslike_c
+                    
+                    const tempDiv = document.querySelector(".temp-div")
+                    tempDiv.innerHTML = ""
+                    const tempEl = document.createElement('p')
+                    tempEl.className = "details"
+                    tempEl.textContent = `${temp}c`
+                    tempDiv.appendChild(tempEl)
+                
+            })
+            .catch(error => {
+                console.error('Failed to fetch data:', error);
+            })
+
+        })} else {
+            console.log("Navigator is not supported by this browser")
+    }
+
+}
+
+getLocation()
 
 // letters to bounce in from top of screen when page loads
 
@@ -9,9 +70,13 @@ gsap.from(".letters", {y: -250, delay: 1.5, duration: 1.5, stagger: .25, ease: "
 const toggleMenu = document.querySelector(".menu-slide")
 const toggleOptions = document.querySelectorAll(".option-button-curtain")
 const closeDiv = document.querySelector(".close-div")
+const place = document.querySelector(".place")
 
 document.querySelector(".menu-button").addEventListener("click", function (e) {
     e.preventDefault()
+    getLocation()
+
+    place.classList.toggle("place-active")
     
     closeDiv.classList.toggle("close-div-down")
 

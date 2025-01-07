@@ -113,17 +113,52 @@ body {
     position: fixed;
     z-index: 100;
     top: 0px;
-    right: -100vw;
+    right: -110%;
     height: 100vh;
-    width: 100vw;
+    width: 50vw;
     overflow: hidden;
     background-color: black;
     transition: all 1.5s linear;
 }
 
 .menu-slide-active {
-    right: -50%;
+    right: 0%;
     transition: all 1.5s linear;
+}
+
+.place {
+    position: absolute;
+    left: -150%;
+    bottom: 100px;
+    text-align: center;
+    height: auto;
+    width: auto;
+    transition: all 1s linear;
+}
+
+.place-active {
+    left: 25px;
+    transition: all 1s linear;
+    transition-delay: 2s;
+}
+
+.temp-div {
+    height: auto;
+    width: auto;
+}
+
+.details {
+    font-size: 20px;
+    color: lime;
+    font-weight: 650;
+    height: 100%;
+    width: 100%;
+}
+
+.location-div {
+    height: auto;
+    width: auto;
+
 }
 
 .option {
@@ -131,7 +166,7 @@ body {
     top: 150px;
     left: 0px;
     height: 50px;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -140,10 +175,11 @@ body {
     width: 100%;
     padding-left: 50px;
     font-size: 25px;
-    text-align: left;
+    text-align: center;
     background-color: black;
     border: none;
     color: lime;
+    overflow: hidden;
     cursor: pointer;
 }
 
@@ -154,18 +190,18 @@ body {
 .option-button-curtain {
     position: absolute;
     top: 0px;
-    right: 0px;
+    right: 0%;
     height: 50px;
-    width: 100vw;
+    width: 100%;
     z-index: 150;
     background-color: black;
     opacity: .8;
 }
 
 .option-button-curtain-active {
-    right: -100vw;
-    transition: right 2.5s;
-    transition-delay: 1.5s;
+    right: -120%;
+    transition: right 4s;
+    transition-delay: 1s;
     transition-property: right;
 }
 
@@ -512,11 +548,10 @@ span {
     .menu-bar {
         top: 20px;
         right: 20px;
-        
     }
 
-    .menu-slide-active {
-        right: 0%;
+    .menu-slide {
+        width: 100vw;
     }
 
     .option {
